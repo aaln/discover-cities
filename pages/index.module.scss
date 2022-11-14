@@ -1,0 +1,86 @@
+
+.map {
+  height: 100vh;
+  width: 100%;
+  .jumpLocationBtn {
+    width: 300px;
+    height: 50px;
+    background: linear-gradient(92.89deg, #5e34f5 2.38%, #c63cbf 47.63%, #e64e71 71%, #ffab0d 100%);
+    // #292941;
+    text-align: center;
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: #eff0f0;
+    cursor: pointer;
+    font-weight: 800;
+  }
+  .infoCard {
+    height: 300px;
+    width: 300px;
+    background: #fff;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 7px 1px rgba(41, 41, 65, .5); 
+box-shadow: 0px 0px 7px 1px rgba(41, 41, 65, .5);
+
+    .city {
+      font-size: 30px;
+    }
+    .country {
+      font-size: 20px;
+    }
+  }
+  .form {
+    min-width: 300px;
+    max-width: 800px;
+    width: 80%;
+    height: 40px;
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    input {
+      height: 100%;
+      width: 80%;
+      border-radius: 10px;
+      font-size: 16px;
+      border: none;
+      padding: 5px;
+      outline: none;
+      background: grey;
+      color: #fff;
+    }
+    input:outline {
+      border: none;
+    }
+    input::placeholder {
+      color: #fff;
+    }
+    button {
+      width: 200px;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+}
