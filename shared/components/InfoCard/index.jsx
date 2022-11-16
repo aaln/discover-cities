@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Moment from 'react-moment';
 import moment from 'moment-timezone';
 import { MdPlace, MdShare, MdMuseum } from 'react-icons/md';
-import { GiForkKnifeSpoon, GiTigerHead } from 'react-icons/gi';
+// import { GiForkKnifeSpoon, GiTigerHead } from 'react-icons/gi';
 
 // Local time: 
 const InfoCard = ({ city, loading, place, requestMarkersData = () => { } }) => {
@@ -37,9 +37,12 @@ const InfoCard = ({ city, loading, place, requestMarkersData = () => { } }) => {
             <div className={css['localTime']}>
               Timezone: {place?.timezone?.timeZoneId}
             </div>
-            <div className={css['localTime']}>
-              <span>Local time</span> <Moment format="HH:mm" tz={`${place?.timezone?.timeZoneId}`} />
-            </div>
+            {
+              // <div className={css['localTime']}>
+              // <span>Local time</span> <Moment format="HH:mm" tz={`${place?.timezone?.timeZoneId}`} /></div>
+            }
+
+
             <div className={css['placeImgContainer']}>
               {
                 (place?.place?.photos?.length > 0 && place?.place?.photos[0]?.photo_reference ? <img className={css['placeImg']} src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${place?.place?.photos[0].photo_reference}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`} /> : null)
@@ -55,14 +58,17 @@ const InfoCard = ({ city, loading, place, requestMarkersData = () => { } }) => {
                 <MdMuseum className={css['icon']} />
                 <div>Museums</div>
               </div>
-              <div className={css['action']} onClick={() => requestMarkersData("food")}>
-                <GiForkKnifeSpoon className={css['icon']} />
-                <div>Food</div>
-              </div>
-              <div className={css['action']} onClick={() => requestMarkersData("zoo")}>
-                <GiTigerHead className={css['icon']} />
-                <div>Zoos</div>
-              </div>
+              {
+                //    <div className={css['action']} onClick={() => requestMarkersData("food")}>
+                //   <GiForkKnifeSpoon className={css['icon']} />
+                //   <div>Food</div>
+                // </div>
+                // <div className={css['action']} onClick={() => requestMarkersData("zoo")}>
+                //   <GiTigerHead className={css['icon']} />
+                //   <div>Zoos</div>
+                // </div>
+              }
+
 
             </div>
           </>

@@ -1,13 +1,9 @@
-
-
-
-
 import css from './index.module.scss';
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import GoogleMap from '../shared/components/GoogleMap';
 import { useState } from 'react';
 import _ from 'lodash';
-// import InfoCard from '../shared/components/InfoCard';
+import InfoCard from '../shared/components/InfoCard';
 import worldcities from '../shared/assets/cities.json';
 import axios from 'axios';
 import defaultPlaces from '../shared/assets/default.json'
@@ -54,7 +50,16 @@ const Map = () => {
       <div className={css['jumpLocationBtn']} onClick={() => { getNewLocation() }}>
         {isLoading ? <span className={css["loader"]}></span> : "Discover New City"}
       </div>
-  
+
+      <InfoCard city={city} loading={isLoading} place={placeData} />
+      {/*<FilterSettings />*/}
+
+
+      <Wrapper apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY} render={renderMap}>
+        <GoogleMap center={{ lat: city.lat, lng: city.lng }} city={city} place={placeData}></GoogleMap>
+      </Wrapper>
+
+
 
     </div>
   )
